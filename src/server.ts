@@ -38,7 +38,7 @@ class Corrente extends Conta{
         if (valor <= 0){
             console.log(`Erro ensira novamente o valor que deseja sacar`)
         }else if(valor <= saldoE){
-            console.log(`Você realizou um saquer de ${valor}, seu novo saldo é ${this.saldo - valor} e seu limite é de ${this.limite}`)
+            console.log(`Você realizou um saquer de ${valor}, seu novo saldo é ${saldoE - valor}`)
         }else if(valor > saldoE){
             console.log(`Não é possivel realizar o saque acima do seu saldo junto com o limite de credito`)
         }else{
@@ -50,6 +50,6 @@ class Corrente extends Conta{
 
 const conta = new Corrente(8080, 300, 'Breno', 1000)
 
-conta.depositar(30)
+conta.depositar(100)
 
-conta.sacar(40)
+conta.sacar(500)
