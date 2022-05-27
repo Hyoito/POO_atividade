@@ -44,7 +44,7 @@ class Corrente extends Conta{
 
             this.limite -= Math.abs(x)
 
-            console.log(`Você realizou um saquer de ${valor}`)
+            console.log(`Você realizou um saque de ${valor}`)
         }else if(valor > saldoE){
             console.log(`Não é possivel realizar o saque acima do seu saldo junto com o limite de credito`)
         }else{
