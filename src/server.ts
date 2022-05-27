@@ -23,11 +23,11 @@ class Corrente extends Conta{
     }
 
     depositar(valor : number){
-        this.saldo += valor
 
         if(valor <= 0){
             console.log(`Erro ensira novamente o valor que deseja depositar`)
         }else{
+            this.saldo += valor
             console.log(`Você depositou ${valor}`)
         }
     }
@@ -38,7 +38,13 @@ class Corrente extends Conta{
         if (valor <= 0){
             console.log(`Erro ensira novamente o valor que deseja sacar`)
         }else if(valor <= saldoE){
-            console.log(`Você realizou um saquer de ${valor}, seu novo saldo é ${saldoE - valor}`)
+            const x = valor - this.saldo - this.limite
+
+            this.saldo -= valor
+
+            this.limite -= Math.abs(x)
+
+            console.log(`Você realizou um saquer de ${valor}`)
         }else if(valor > saldoE){
             console.log(`Não é possivel realizar o saque acima do seu saldo junto com o limite de credito`)
         }else{
@@ -50,6 +56,8 @@ class Corrente extends Conta{
 
 const conta = new Corrente(8080, 300, 'Breno', 1000)
 
-conta.depositar(100)
+conta.depositar(-100)
 
 conta.sacar(500)
+
+console.log(`${conta.getSaldo()}`)
