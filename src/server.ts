@@ -50,6 +50,6 @@ class Corrente extends Conta{
 
 const conta = new Corrente(8080, 300, 'Breno', 1000)
 
-conta.depositar(100)
+conta.depositar(-100)
 
 conta.sacar(500)
